@@ -53,3 +53,6 @@ The main two features are the ones that are engineered in the project, which are
 For question 2) 
 A Random Forest Classifier is the algorithm that has the highest f1_score of 0.848 in the training dataset and a f1 score of 0.849 for the validation data set which is 30% of the data. The f1 score is used to measure the performance of the model, because this metric is a good way to balance both the precision and the recall which takes into account the True Positives and the False Positives in the calssifier. If we have a very good f1 score like we do for the predictive model, then we confirm that out model performs well for its purpose.
 
+## Blog Post
+
+https://medium.com/@nitin.ramchand_78407/starbucks-data-science-capstone-project-data-science-nanodegree-udacity-6b2152adacfb
