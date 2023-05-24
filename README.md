@@ -12,8 +12,44 @@ Every offer has a validity period before the offer expires. As an example, a BOG
 
 ## Data sets
 
+The data is contained in three files:
 
+portfolio.json - containing offer ids and meta data about each offer (duration, type, etc.)
+profile.json - demographic data for each customer
+transcript.json - records for transactions, offers received, offers viewed, and offers completed
+Here is the schema and explanation of each variable in the files:
+
+portfolio.json
+
+id (string) - offer id
+offer_type (string) - type of offer ie BOGO, discount, informational
+difficulty (int) - minimum required spend to complete an offer
+reward (int) - reward given for completing an offer
+duration (int) - time for offer to be open, in days
+channels (list of strings)
+profile.json
+
+age (int) - age of the customer
+became_member_on (int) - date when customer created an app account
+gender (str) - gender of the customer (note some entries contain 'O' for other rather than M or F)
+id (str) - customer id
+income (float) - customer's income
+transcript.json
+
+event (str) - record description (ie transaction, offer received, offer viewed, etc.)
+person (str) - customer id
+time (int) - time in hours since start of test. The data begins at time t=0
+value - (dict of strings) - either an offer id or transaction amount depending on the record
 
 ## Project Motivation
 
 1) What are the main features that helps us identify whether an offer will be completed or not
+2) Define a predictive model that will define when a customer will complete an offer with the data given, which is customer data, sociodemographic data and transaction data.
+
+## Results
+
+For question 1)
+The main two features are the ones that are engineered in the project, which are the total amount spent by a customer before a transaction and the customer loyalty in days
+For question 2) 
+A Random Forest Classifier is the algorithm that has the highest f1_score of 0.848 in the training dataset and a f1 score of 0.849 for the validation data set which is 30% of the data. 
+
